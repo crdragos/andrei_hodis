@@ -77,15 +77,25 @@ class DescriptionPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 8.0),
                     Row(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(
                           FontAwesomeIcons.locationArrow,
-                          size: 16.0,
+                          size: 32.0,
+                          color: Colors.amber[800],
                         ),
-                        SizedBox(width: 8.0),
-                        Text(
-                          'Strada Clujului, Gherla, Romania',
-                          style: TextStyle(fontSize: 14.0),
+                        const SizedBox(width: 16.0),
+                        Column(
+                          children: const <Widget>[
+                            Text(
+                              'Strada Clujului, Nr. 3',
+                              style: TextStyle(fontSize: 16.0),
+                            ),
+                            SizedBox(height: 8.0),
+                            Text(
+                              'Gherla, Cluj',
+                              style: TextStyle(fontSize: 16.0),
+                            ),
+                          ],
                         ),
                       ],
                     ),

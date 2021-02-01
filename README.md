@@ -1,6 +1,6 @@
 # andrei_hodis
 
-A new Flutter project.
+Barber booking application
 
 ## Project Setup
 * [x] Dependencies
@@ -25,4 +25,16 @@ A new Flutter project.
   * [x] Location 
 * [x] Barber services
   * [ ] Create new booking
-* [x] Barber timetable 
+* [x] Barber timetable
+
+## BookingPage
+
+## BookingsPage
+
+## UserPage
+* [x] Display user info
+  * [x] photoUrl
+  * [x] username
+  * [x] email
+  * [x] phoneNumber
+* [ ] Edit user info

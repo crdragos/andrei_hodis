@@ -1,4 +1,5 @@
 import 'package:andrei_hodis/src/presentation/description/description_page.dart';
+import 'package:andrei_hodis/src/presentation/user/user_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         const DescriptionPage(),
         Container(color: Colors.red),
         Container(color: Colors.yellow),
-        Container(color: Colors.blue),
+        const UserPage(),
       ][_page],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _page,

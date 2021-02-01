@@ -24,8 +24,8 @@ class AuthEpics {
     return actions //
         .flatMap((Login$ action) => Stream<Login$>.value(action) //
             .asyncMap((Login$ action) => _authApi.login(email: action.email, password: action.password))
-            .map((AppUser user) => SignUp.successful(user))
-            .onErrorReturnWith((dynamic error) => SignUp.error(error))
+            .map((AppUser user) => Login.successful(user))
+            .onErrorReturnWith((dynamic error) => Login.error(error))
             .doOnData(action.response));
   }
 

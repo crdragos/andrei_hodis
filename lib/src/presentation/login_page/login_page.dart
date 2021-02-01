@@ -4,6 +4,7 @@ import 'package:andrei_hodis/src/presentation/mixins/dialog_mixin.dart';
 import 'package:andrei_hodis/src/presentation/routes.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -105,7 +106,6 @@ class _LoginPageState extends State<LoginPage> with DialogMixin {
                         ),
                         onPressed: () {
                           if (Form.of(context).validate()) {
-                            print('haus');
                             StoreProvider.of<AppState>(context).dispatch(
                               Login(
                                 email: _email.text,
