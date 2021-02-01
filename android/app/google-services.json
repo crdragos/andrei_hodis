@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "603768437218",
+    "project_id": "andrei-hodis",
+    "storage_bucket": "andrei-hodis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603768437218:android:4e7521958576f68980e1bb",
+        "android_client_info": {
+          "package_name": "com.example.andrei_hodis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603768437218-m3g7qrkc2o3kvt923ruodbnplbra1eq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLi_0xxMpkm6c6Cgecbf5dl8PlCTLAEjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603768437218-m3g7qrkc2o3kvt923ruodbnplbra1eq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
