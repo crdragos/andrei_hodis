@@ -20,10 +20,7 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     if (object.user != null) {
-      result
-        ..add('user')
-        ..add(serializers.serialize(object.user,
-            specifiedType: const FullType(AppUser)));
+      result..add('user')..add(serializers.serialize(object.user, specifiedType: const FullType(AppUser)));
     }
     return result;
   }
@@ -40,8 +37,7 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
       final dynamic value = iterator.current;
       switch (key) {
         case 'user':
-          result.user.replace(serializers.deserialize(value,
-              specifiedType: const FullType(AppUser)) as AppUser);
+          result.user.replace(serializers.deserialize(value, specifiedType: const FullType(AppUser)) as AppUser);
           break;
       }
     }
@@ -57,29 +53,20 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
   final String wireName = 'AppUser';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, AppUser object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object> serialize(Serializers serializers, AppUser object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'uid',
       serializers.serialize(object.uid, specifiedType: const FullType(String)),
       'email',
-      serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.email, specifiedType: const FullType(String)),
       'displayName',
-      serializers.serialize(object.displayName,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.displayName, specifiedType: const FullType(String)),
     ];
     if (object.photoUrl != null) {
-      result
-        ..add('photoUrl')
-        ..add(serializers.serialize(object.photoUrl,
-            specifiedType: const FullType(String)));
+      result..add('photoUrl')..add(serializers.serialize(object.photoUrl, specifiedType: const FullType(String)));
     }
     if (object.phoneNumber != null) {
-      result
-        ..add('phoneNumber')
-        ..add(serializers.serialize(object.phoneNumber,
-            specifiedType: const FullType(String)));
+      result..add('phoneNumber')..add(serializers.serialize(object.phoneNumber, specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -96,24 +83,19 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       final dynamic value = iterator.current;
       switch (key) {
         case 'uid':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'displayName':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.displayName = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'photoUrl':
-          result.photoUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.photoUrl = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'phoneNumber':
-          result.phoneNumber = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.phoneNumber = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -126,14 +108,12 @@ class _$AuthState extends AuthState {
   @override
   final AppUser user;
 
-  factory _$AuthState([void Function(AuthStateBuilder) updates]) =>
-      (new AuthStateBuilder()..update(updates)).build();
+  factory _$AuthState([void Function(AuthStateBuilder) updates]) => (new AuthStateBuilder()..update(updates)).build();
 
   _$AuthState._({this.user}) : super._();
 
   @override
-  AuthState rebuild(void Function(AuthStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AuthState rebuild(void Function(AuthStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AuthStateBuilder toBuilder() => new AuthStateBuilder()..replace(this);
@@ -151,8 +131,7 @@ class _$AuthState extends AuthState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AuthState')..add('user', user))
-        .toString();
+    return (newBuiltValueToStringHelper('AuthState')..add('user', user)).toString();
   }
 }
 
@@ -197,8 +176,7 @@ class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
         _$failedField = 'user';
         _user?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AuthState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AuthState', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -219,12 +197,9 @@ class _$AppUser extends AppUser {
   @override
   final String phoneNumber;
 
-  factory _$AppUser([void Function(AppUserBuilder) updates]) =>
-      (new AppUserBuilder()..update(updates)).build();
+  factory _$AppUser([void Function(AppUserBuilder) updates]) => (new AppUserBuilder()..update(updates)).build();
 
-  _$AppUser._(
-      {this.uid, this.email, this.displayName, this.photoUrl, this.phoneNumber})
-      : super._() {
+  _$AppUser._({this.uid, this.email, this.displayName, this.photoUrl, this.phoneNumber}) : super._() {
     if (uid == null) {
       throw new BuiltValueNullFieldError('AppUser', 'uid');
     }
@@ -237,8 +212,7 @@ class _$AppUser extends AppUser {
   }
 
   @override
-  AppUser rebuild(void Function(AppUserBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppUser rebuild(void Function(AppUserBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppUserBuilder toBuilder() => new AppUserBuilder()..replace(this);
@@ -256,11 +230,7 @@ class _$AppUser extends AppUser {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, uid.hashCode), email.hashCode),
-                displayName.hashCode),
-            photoUrl.hashCode),
+    return $jf($jc($jc($jc($jc($jc(0, uid.hashCode), email.hashCode), displayName.hashCode), photoUrl.hashCode),
         phoneNumber.hashCode));
   }
 
@@ -329,12 +299,7 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   @override
   _$AppUser build() {
     final _$result = _$v ??
-        new _$AppUser._(
-            uid: uid,
-            email: email,
-            displayName: displayName,
-            photoUrl: photoUrl,
-            phoneNumber: phoneNumber);
+        new _$AppUser._(uid: uid, email: email, displayName: displayName, photoUrl: photoUrl, phoneNumber: phoneNumber);
     replace(_$result);
     return _$result;
   }

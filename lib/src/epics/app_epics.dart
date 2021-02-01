@@ -6,8 +6,8 @@ import 'package:redux_epics/redux_epics.dart';
 
 class AppEpics {
   const AppEpics({@required AuthApi authApi})
-      :assert(authApi != null),
-        _authApi=authApi;
+      : assert(authApi != null),
+        _authApi = authApi;
 
   final AuthApi _authApi;
 
