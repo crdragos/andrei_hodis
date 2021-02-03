@@ -86,8 +86,21 @@ class AuthApi {
     return user;
   }
 
+  Future<AppUser> updateUserInfo({@required AppUser user, String displayName, String phoneNumber}) async {
+    await _firestore.doc('users/${user.uid}').update(
+      <String, dynamic>{
+        'displayName': displayName,
+        'phoneNumber': phoneNumber,
+      },
+    );
+
+    final DocumentSnapshot snapshot = await _firestore.doc('users/${user.uid}').get();
+    return AppUser.fromJson(snapshot.data());
+  }
+
   Future<void> logout() async {
     await _auth.signOut();
+    await _google.signOut();
   }
 
   Future<void> resetPassword({@required String email}) async {

@@ -22,6 +22,7 @@ class AuthEpics {
       TypedEpic<AppState, Logout$>(_logout),
       TypedEpic<AppState, InitializeApp$>(_initializeApp),
       TypedEpic<AppState, ResetPassword$>(_resetPassword),
+      TypedEpic<AppState, UpdateUserInfo$>(_updateUserInfo),
     ]);
   }
 
@@ -79,5 +80,17 @@ class AuthEpics {
             .asyncMap((ResetPassword$ action) => _authApi.resetPassword(email: action.email))
             .map((_) => const ResetPassword.successful())
             .onErrorReturnWith((dynamic error) => ResetPassword.error(error)));
+  }
+
+  Stream<AppAction> _updateUserInfo(Stream<UpdateUserInfo$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((UpdateUserInfo$ action) => Stream<UpdateUserInfo$>.value(action)
+            .asyncMap((UpdateUserInfo$ action) => _authApi.updateUserInfo(
+                  user: action.user,
+                  displayName: action.displayName,
+                  phoneNumber: action.phoneNumber,
+                ))
+            .map((AppUser user) => UpdateUserInfo.successful(user))
+            .onErrorReturnWith((dynamic error) => UpdateUserInfo.error(error)));
   }
 }

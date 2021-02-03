@@ -10,4 +10,5 @@ part 'logout.dart';
 part 'initialize_app.dart';
 part 'reset_password.dart';
 part 'login_with_google.dart';
+part 'update_user_info.dart';
 part 'index.freezed.dart';

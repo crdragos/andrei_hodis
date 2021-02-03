@@ -14,7 +14,7 @@ Barber booking application
 
 ## Authentication
 * [x] login / register with email and password
-* [ ] login / register with google
+* [x] login / register with google
 * [ ] login / register with facebook
 * [ ] login / register with phone number 
 * [x] logout
@@ -48,6 +48,6 @@ Barber booking application
   * [x] username
   * [x] email
   * [x] phoneNumber
-* [ ] Edit user info
+* [x] Edit user info
 
 ![UserPage](https://user-images.githubusercontent.com/56366016/106574653-d83ca780-6543-11eb-9382-caa05f464de5.png)
