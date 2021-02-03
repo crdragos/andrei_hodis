@@ -6,4 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'login.dart';
 part 'sign_up.dart';
+part 'logout.dart';
+part 'initialize_app.dart';
+part 'reset_password.dart';
 part 'index.freezed.dart';

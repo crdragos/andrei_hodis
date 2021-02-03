@@ -1,3 +1,4 @@
+import 'package:andrei_hodis/src/actions/auth/index.dart';
 import 'package:andrei_hodis/src/data/auth_api.dart';
 import 'package:andrei_hodis/src/epics/app_epics.dart';
 import 'package:andrei_hodis/src/models/index.dart';
@@ -25,5 +26,5 @@ Future<Store<AppState>> init() async {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(epics.epics),
     ],
-  );
+  )..dispatch(const InitializeApp());
 }

@@ -1,7 +1,8 @@
+import 'package:andrei_hodis/src/actions/auth/index.dart';
 import 'package:andrei_hodis/src/containers/auth/index.dart';
 import 'package:andrei_hodis/src/models/index.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 
 class UserPage extends StatefulWidget {
   const UserPage({Key key}) : super(key: key);
@@ -18,19 +19,22 @@ class _UserPageState extends State<UserPage> {
         appBar: AppBar(
           title: const Text('Date Personale'),
           actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                FontAwesomeIcons.solidSave,
-                color: Colors.amber[800],
+            GestureDetector(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Salveaza',
+                    style: TextStyle(
+                      color: Colors.amber[800],
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
               ),
-              onPressed: () => print('haus'),
-            ),
-            IconButton(
-              icon: Icon(
-                FontAwesomeIcons.signOutAlt,
-                color: Colors.amber[800],
-              ),
-              onPressed: () => print('logout'),
+              onTap: () {
+                print('haus');
+              },
             ),
           ],
         ),
@@ -48,7 +52,7 @@ class _UserPageState extends State<UserPage> {
                         child: Text(
                           user.displayName.split(' ').length >= 2
                               ? '${user.displayName.split(' ')[0][0]}${user.displayName.split(' ')[1][0]}'
-                              : '${user.displayName.split(' ')[0][0]}',
+                              : '${user.displayName[0]}',
                           style: TextStyle(
                             color: Colors.amber[800],
                             fontSize: 82.0,
@@ -84,6 +88,27 @@ class _UserPageState extends State<UserPage> {
                 initialValue: user.phoneNumber,
                 decoration: const InputDecoration(
                   labelText: 'phone',
+                ),
+              ),
+              const Spacer(),
+              Center(
+                child: Container(
+                  height: 40.0,
+                  width: MediaQuery.of(context).size.width * .5,
+                  color: Colors.amber[800],
+                  child: FlatButton(
+                    child: const Text(
+                      'Sign out',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                    onPressed: () {
+                      StoreProvider.of<AppState>(context).dispatch(const Logout());
+                    },
+                  ),
                 ),
               ),
             ],

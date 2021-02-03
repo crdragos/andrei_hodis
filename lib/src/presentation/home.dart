@@ -1,7 +1,7 @@
 import 'package:andrei_hodis/src/containers/index.dart';
 import 'package:andrei_hodis/src/models/auth/index.dart';
 import 'package:andrei_hodis/src/presentation/home/home_page.dart';
-import 'package:andrei_hodis/src/presentation/login_page/login_page.dart';
+import 'package:andrei_hodis/src/presentation/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {

@@ -85,8 +85,15 @@ class _LoginPageState extends State<LoginPage> with DialogMixin {
                     ),
                   ),
                   const SizedBox(height: 8.0),
-                  const Text(
-                    'Forgot password ?',
+                  Text.rich(
+                    TextSpan(
+                      text: 'Forgot password ?',
+                      style: const TextStyle(fontSize: 16.0),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.pushNamed(context, AppRoutes.resetPassword);
+                        },
+                    ),
                   ),
                   const SizedBox(height: 16.0),
                   Center(

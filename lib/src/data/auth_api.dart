@@ -14,6 +14,12 @@ class AuthApi {
   final FirebaseAuth _auth;
   final FirebaseFirestore _firestore;
 
+  Future<AppUser> initializeApp() async {
+    final User user = _auth.currentUser;
+    final DocumentSnapshot snapshot = await _firestore.doc('users/${user.uid}').get();
+    return AppUser.fromJson(snapshot.data());
+  }
+
   Future<AppUser> login({@required String email, @required String password}) async {
     final UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
     final DocumentSnapshot snapshot = await _firestore.doc('users/${result.user.uid}').get();
@@ -39,5 +45,13 @@ class AuthApi {
 
     await _firestore.doc('users/${result.user.uid}').set(appUser.json);
     return appUser;
+  }
+
+  Future<void> logout() async {
+    await _auth.signOut();
+  }
+
+  Future<void> resetPassword({@required String email}) async {
+    _auth.sendPasswordResetEmail(email: email);
   }
 }
