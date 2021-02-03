@@ -109,7 +109,6 @@ class _SignUpPageState extends State<SignUpPage> with DialogMixin {
                       controller: _phoneNumber,
                       decoration: const InputDecoration(hintText: 'phone'),
                       keyboardType: TextInputType.phone,
-                      obscureText: true,
                       onChanged: (String value) {},
                       validator: (String value) {
                         if (value.length != 10) {

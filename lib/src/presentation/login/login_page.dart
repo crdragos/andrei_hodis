@@ -22,6 +22,8 @@ class _LoginPageState extends State<LoginPage> with DialogMixin {
   void _onResponse(AppAction action) {
     if (action is LoginError) {
       showError(context, 'Sing in failed', action.error);
+    } else if (action is LoginWithGoogleError) {
+      showError(context, 'Sign in with Google failed', action.error);
     }
   }
 
@@ -150,7 +152,7 @@ class _LoginPageState extends State<LoginPage> with DialogMixin {
                                 color: Colors.white,
                               ),
                               onPressed: () {
-                                print('HAUS - google');
+                                StoreProvider.of<AppState>(context).dispatch(LoginWithGoogle(_onResponse));
                               },
                             ),
                           ),

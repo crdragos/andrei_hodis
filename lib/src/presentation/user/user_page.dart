@@ -16,6 +16,7 @@ class _UserPageState extends State<UserPage> {
   Widget build(BuildContext context) {
     return UserContainer(builder: (BuildContext context, AppUser user) {
       return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text('Date Personale'),
           actions: <Widget>[
@@ -86,6 +87,7 @@ class _UserPageState extends State<UserPage> {
               const SizedBox(height: 8.0),
               TextFormField(
                 initialValue: user.phoneNumber,
+                keyboardType: TextInputType.phone,
                 decoration: const InputDecoration(
                   labelText: 'phone',
                 ),

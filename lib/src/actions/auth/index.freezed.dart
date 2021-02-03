@@ -2099,3 +2099,430 @@ abstract class ResetPasswordError implements ResetPassword, ErrorAction {
   Object get error;
   $ResetPasswordErrorCopyWith<ResetPasswordError> get copyWith;
 }
+
+/// @nodoc
+class _$LoginWithGoogleTearOff {
+  const _$LoginWithGoogleTearOff();
+
+// ignore: unused_element
+  LoginWithGoogle$ call(void Function(AppAction) response) {
+    return LoginWithGoogle$(
+      response,
+    );
+  }
+
+// ignore: unused_element
+  LoginWithGoogleSuccessful successful(AppUser user) {
+    return LoginWithGoogleSuccessful(
+      user,
+    );
+  }
+
+// ignore: unused_element
+  LoginWithGoogleError error(Object error) {
+    return LoginWithGoogleError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $LoginWithGoogle = _$LoginWithGoogleTearOff();
+
+/// @nodoc
+mixin _$LoginWithGoogle {
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(void Function(AppAction) response), {
+    @required Result successful(AppUser user),
+    @required Result error(Object error),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(void Function(AppAction) response), {
+    Result successful(AppUser user),
+    Result error(Object error),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(LoginWithGoogle$ value), {
+    @required Result successful(LoginWithGoogleSuccessful value),
+    @required Result error(LoginWithGoogleError value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(LoginWithGoogle$ value), {
+    Result successful(LoginWithGoogleSuccessful value),
+    Result error(LoginWithGoogleError value),
+    @required Result orElse(),
+  });
+}
+
+/// @nodoc
+abstract class $LoginWithGoogleCopyWith<$Res> {
+  factory $LoginWithGoogleCopyWith(LoginWithGoogle value, $Res Function(LoginWithGoogle) then) =
+      _$LoginWithGoogleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LoginWithGoogleCopyWithImpl<$Res> implements $LoginWithGoogleCopyWith<$Res> {
+  _$LoginWithGoogleCopyWithImpl(this._value, this._then);
+
+  final LoginWithGoogle _value;
+  // ignore: unused_field
+  final $Res Function(LoginWithGoogle) _then;
+}
+
+/// @nodoc
+abstract class $LoginWithGoogle$CopyWith<$Res> {
+  factory $LoginWithGoogle$CopyWith(LoginWithGoogle$ value, $Res Function(LoginWithGoogle$) then) =
+      _$LoginWithGoogle$CopyWithImpl<$Res>;
+  $Res call({void Function(AppAction) response});
+}
+
+/// @nodoc
+class _$LoginWithGoogle$CopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
+    implements $LoginWithGoogle$CopyWith<$Res> {
+  _$LoginWithGoogle$CopyWithImpl(LoginWithGoogle$ _value, $Res Function(LoginWithGoogle$) _then)
+      : super(_value, (v) => _then(v as LoginWithGoogle$));
+
+  @override
+  LoginWithGoogle$ get _value => super._value as LoginWithGoogle$;
+
+  @override
+  $Res call({
+    Object response = freezed,
+  }) {
+    return _then(LoginWithGoogle$(
+      response == freezed ? _value.response : response as void Function(AppAction),
+    ));
+  }
+}
+
+/// @nodoc
+class _$LoginWithGoogle$ implements LoginWithGoogle$ {
+  const _$LoginWithGoogle$(this.response) : assert(response != null);
+
+  @override
+  final void Function(AppAction) response;
+
+  @override
+  String toString() {
+    return 'LoginWithGoogle(response: $response)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LoginWithGoogle$ &&
+            (identical(other.response, response) || const DeepCollectionEquality().equals(other.response, response)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(response);
+
+  @override
+  $LoginWithGoogle$CopyWith<LoginWithGoogle$> get copyWith =>
+      _$LoginWithGoogle$CopyWithImpl<LoginWithGoogle$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(void Function(AppAction) response), {
+    @required Result successful(AppUser user),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(response);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(void Function(AppAction) response), {
+    Result successful(AppUser user),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(response);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(LoginWithGoogle$ value), {
+    @required Result successful(LoginWithGoogleSuccessful value),
+    @required Result error(LoginWithGoogleError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(LoginWithGoogle$ value), {
+    Result successful(LoginWithGoogleSuccessful value),
+    Result error(LoginWithGoogleError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithGoogle$ implements LoginWithGoogle {
+  const factory LoginWithGoogle$(void Function(AppAction) response) = _$LoginWithGoogle$;
+
+  void Function(AppAction) get response;
+  $LoginWithGoogle$CopyWith<LoginWithGoogle$> get copyWith;
+}
+
+/// @nodoc
+abstract class $LoginWithGoogleSuccessfulCopyWith<$Res> {
+  factory $LoginWithGoogleSuccessfulCopyWith(
+          LoginWithGoogleSuccessful value, $Res Function(LoginWithGoogleSuccessful) then) =
+      _$LoginWithGoogleSuccessfulCopyWithImpl<$Res>;
+  $Res call({AppUser user});
+}
+
+/// @nodoc
+class _$LoginWithGoogleSuccessfulCopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
+    implements $LoginWithGoogleSuccessfulCopyWith<$Res> {
+  _$LoginWithGoogleSuccessfulCopyWithImpl(
+      LoginWithGoogleSuccessful _value, $Res Function(LoginWithGoogleSuccessful) _then)
+      : super(_value, (v) => _then(v as LoginWithGoogleSuccessful));
+
+  @override
+  LoginWithGoogleSuccessful get _value => super._value as LoginWithGoogleSuccessful;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(LoginWithGoogleSuccessful(
+      user == freezed ? _value.user : user as AppUser,
+    ));
+  }
+}
+
+/// @nodoc
+class _$LoginWithGoogleSuccessful implements LoginWithGoogleSuccessful {
+  const _$LoginWithGoogleSuccessful(this.user) : assert(user != null);
+
+  @override
+  final AppUser user;
+
+  @override
+  String toString() {
+    return 'LoginWithGoogle.successful(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LoginWithGoogleSuccessful &&
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @override
+  $LoginWithGoogleSuccessfulCopyWith<LoginWithGoogleSuccessful> get copyWith =>
+      _$LoginWithGoogleSuccessfulCopyWithImpl<LoginWithGoogleSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(void Function(AppAction) response), {
+    @required Result successful(AppUser user),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(void Function(AppAction) response), {
+    Result successful(AppUser user),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(LoginWithGoogle$ value), {
+    @required Result successful(LoginWithGoogleSuccessful value),
+    @required Result error(LoginWithGoogleError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(LoginWithGoogle$ value), {
+    Result successful(LoginWithGoogleSuccessful value),
+    Result error(LoginWithGoogleError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithGoogleSuccessful implements LoginWithGoogle {
+  const factory LoginWithGoogleSuccessful(AppUser user) = _$LoginWithGoogleSuccessful;
+
+  AppUser get user;
+  $LoginWithGoogleSuccessfulCopyWith<LoginWithGoogleSuccessful> get copyWith;
+}
+
+/// @nodoc
+abstract class $LoginWithGoogleErrorCopyWith<$Res> {
+  factory $LoginWithGoogleErrorCopyWith(LoginWithGoogleError value, $Res Function(LoginWithGoogleError) then) =
+      _$LoginWithGoogleErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$LoginWithGoogleErrorCopyWithImpl<$Res> extends _$LoginWithGoogleCopyWithImpl<$Res>
+    implements $LoginWithGoogleErrorCopyWith<$Res> {
+  _$LoginWithGoogleErrorCopyWithImpl(LoginWithGoogleError _value, $Res Function(LoginWithGoogleError) _then)
+      : super(_value, (v) => _then(v as LoginWithGoogleError));
+
+  @override
+  LoginWithGoogleError get _value => super._value as LoginWithGoogleError;
+
+  @override
+  $Res call({
+    Object error = freezed,
+  }) {
+    return _then(LoginWithGoogleError(
+      error == freezed ? _value.error : error,
+    ));
+  }
+}
+
+@Implements(ErrorAction)
+
+/// @nodoc
+class _$LoginWithGoogleError implements LoginWithGoogleError {
+  const _$LoginWithGoogleError(this.error) : assert(error != null);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'LoginWithGoogle.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LoginWithGoogleError &&
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @override
+  $LoginWithGoogleErrorCopyWith<LoginWithGoogleError> get copyWith =>
+      _$LoginWithGoogleErrorCopyWithImpl<LoginWithGoogleError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(void Function(AppAction) response), {
+    @required Result successful(AppUser user),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(void Function(AppAction) response), {
+    Result successful(AppUser user),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(LoginWithGoogle$ value), {
+    @required Result successful(LoginWithGoogleSuccessful value),
+    @required Result error(LoginWithGoogleError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(LoginWithGoogle$ value), {
+    Result successful(LoginWithGoogleSuccessful value),
+    Result error(LoginWithGoogleError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoginWithGoogleError implements LoginWithGoogle, ErrorAction {
+  const factory LoginWithGoogleError(Object error) = _$LoginWithGoogleError;
+
+  Object get error;
+  $LoginWithGoogleErrorCopyWith<LoginWithGoogleError> get copyWith;
+}

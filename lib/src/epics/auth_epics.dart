@@ -17,6 +17,7 @@ class AuthEpics {
   Epic<AppState> get epics {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, Login$>(_login),
+      TypedEpic<AppState, LoginWithGoogle$>(_loginWithGoogle),
       TypedEpic<AppState, SignUp$>(_signUp),
       TypedEpic<AppState, Logout$>(_logout),
       TypedEpic<AppState, InitializeApp$>(_initializeApp),
@@ -30,6 +31,15 @@ class AuthEpics {
             .asyncMap((Login$ action) => _authApi.login(email: action.email, password: action.password))
             .map((AppUser user) => Login.successful(user))
             .onErrorReturnWith((dynamic error) => Login.error(error))
+            .doOnData(action.response));
+  }
+
+  Stream<AppAction> _loginWithGoogle(Stream<LoginWithGoogle$> actions, EpicStore<AppState> store) {
+    return actions //
+        .flatMap((LoginWithGoogle$ action) => Stream<LoginWithGoogle$>.value(action)
+            .asyncMap((LoginWithGoogle$ action) => _authApi.loginWithGoogle())
+            .map((AppUser user) => LoginWithGoogle.successful(user))
+            .onErrorReturnWith((dynamic error) => LoginWithGoogle.error(error))
             .doOnData(action.response));
   }
 
